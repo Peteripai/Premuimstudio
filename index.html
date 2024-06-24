@@ -6,6 +6,29 @@
     <title>StudioRentals - Studio Rental Services</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+         #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            width: 40px;
+            height: 40px;
+            background-color: #6a922a;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-size: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -161,7 +184,8 @@
             </form>
         </div>
     </section>
-
+ <a href="#Home" id="back-to-top" title="Back to Top">&uarr;</a>
+     <script src="script.js"></script>
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
@@ -200,7 +224,29 @@
             </div>
         </div>
     </footer>
+  <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var backToTop = document.getElementById("back-to-top");
 
+            // Show or hide the button
+            window.onscroll = function() {
+                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                    backToTop.style.display = "block";
+                } else {
+                    backToTop.style.display = "none";
+                }
+            };
+
+            // Scroll to the top smoothly
+            backToTop.addEventListener("click", function(event) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
